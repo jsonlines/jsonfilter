@@ -25,8 +25,8 @@ some examples:
 `rows.*` matches any child elements of `rows`, e.g.:
 
 ```
-$ echo '{"rows": [ {"this object", "will be matched"}, {"so will": "this one"} ]}' | jsonfilter "rows.*"
-{"this object", "will be matched"}
+$ echo '{"rows": [ {"this object": "will be matched"}, {"so will": "this one"} ]}' | jsonfilter "rows.*"
+{"this object": "will be matched"}
 {"so will": "this one"}
 ```
 

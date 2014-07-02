@@ -33,7 +33,7 @@ $ echo '{"rows": [ {"this object": "will be matched"}, {"so will": "this one"} ]
 `rows.*.doc` matches all children of `rows` with key `doc`, e.g.:
 
 ```
-$ echo '{"rows": [ {doc: {'this object': 'will be matched'}, foo: "bar"} ]}' | jsonfilter "rows.*.doc"
+$ echo '{"rows": [ {"doc": {"this object": "will be matched"}, "foo": "bar"} ]}' | jsonfilter "rows.*.doc"
 {'this object': 'will be matched'}
 ```
 

@@ -1,0 +1,27 @@
+{
+  "name": "jsonfilter",
+  "version": "1.0.0",
+  "bin": {
+    "jsonfilter": "cli.js"
+  },
+  "description": "Streaming JSON filtering on the command line",
+  "main": "index.js",
+  "author": "max ogden",
+  "license": "BSD",
+  "dependencies": {
+    "JSONStream": "^0.8.4",
+    "stream-combiner": "^0.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxogden/jsonfilter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxogden/jsonfilter/issues"
+  },
+  "homepage": "https://github.com/maxogden/jsonfilter"
+}

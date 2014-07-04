@@ -22,6 +22,13 @@ Matches will be printed as Newline Delimited JSON (NDJSON)
 
 some examples:
 
+Emit the value of a particular key by naming it, e.g.:
+
+```
+$ echo '{"name": "Joe Blogs", "age": 28}' | jsonfilter "name"
+"Joe Blogs"
+```
+
 `rows.*` matches any child elements of `rows`, e.g.:
 
 ```

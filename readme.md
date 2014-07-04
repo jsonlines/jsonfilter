@@ -20,26 +20,34 @@ jsonfilter <filter>
 
 Matches will be printed as Newline Delimited JSON (NDJSON)
 
-some examples:
+**some examples:**
 
-`rows.*` matches any child elements of `rows`, e.g.:
+`"name"` matches the key `name` in an object and returns the value.
 
+```BASH
+$ echo '{ name: "foo", type: "bar"}, { name: "foobar", type: "barfoo"}' | jsonfilter "name"
+# "foo"
+# "foobar"
 ```
+
+`"rows.*"` matches any child elements (items inside the array) of `rows`, e.g.:
+
+```BASH
 $ echo '{"rows": [ {"this object": "will be matched"}, {"so will": "this one"} ]}' | jsonfilter "rows.*"
-{"this object": "will be matched"}
-{"so will": "this one"}
+# {"this object": "will be matched"}
+# {"so will": "this one"}
 ```
 
-`rows.*.doc` matches all children of `rows` with key `doc`, e.g.:
+`"rows.*.doc"` matches all children of `rows` with key `doc`, e.g.:
 
-```
+```BASH
 $ echo '{"rows": [ {"doc": {"this object": "will be matched"}, "foo": "bar"} ]}' | jsonfilter "rows.*.doc"
-{'this object': 'will be matched'}
+# {'this object': 'will be matched'}
 ```
 
-`rows..doc` recursively matches all children of `rows` and emits all with key `doc`, e.g.:
+`"rows..doc"` recursively matches all children of `rows` and emits all with key `doc`, e.g.:
 
-```
+```BASH
 $ echo '{"rows": [ {"foo": {"bar": {"baz": {"taco": {"doc": "woo"}}}}} ]}' | jsonfilter "rows..doc"
-"woo"
+# "woo"
 ```

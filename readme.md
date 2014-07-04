@@ -25,7 +25,7 @@ Matches will be printed as Newline Delimited JSON (NDJSON)
 `"name"` matches the key `name` in an object and returns the value.
 
 ```BASH
-$ echo '{ name: "foo", type: "bar"}, { name: "foobar", type: "barfoo"}' | jsonfilter "name"
+$ echo '{"name": "foo", "type": "bar"}{ "name": "foobar", "type": "barfoo"}' | jsonfilter "name"
 # "foo"
 # "foobar"
 ```

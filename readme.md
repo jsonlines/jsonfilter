@@ -22,7 +22,14 @@ Matches will be printed as Newline Delimited JSON (NDJSON)
 
 **some examples:**
 
-`"name"` matches the key `name` in an object and returns the value.
+Emit the value of a particular key by naming it, e.g. `"name"` matches the key `name` in an object and returns the value:
+
+```
+$ echo '{"name": "Joe Blogs", "age": 28}' | jsonfilter "name"
+"Joe Blogs"
+```
+
+`rows.*` matches any child elements of `rows`, e.g.:
 
 ```BASH
 $ echo '{"name": "foo", "type": "bar"}{ "name": "foobar", "type": "barfoo"}' | jsonfilter "name"

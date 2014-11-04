@@ -65,7 +65,7 @@ by default all matched objects are emitted. You can supply a custom JS expressio
 
 ```BASH
 $ echo '{"name": "foo", "type": "bar"}{"name": "foobar", "type": "barfoo"}' | jsonfilter "name" --match="this === 'foo'"
-# foo
+"foo"
 
 $ echo '{"name": "foo", "type": "bar"}{"name": "foobar", "type": "barfoo"}' | jsonfilter --match="this.name === 'foo'"
 {"name": "foo", "type": "bar"}
